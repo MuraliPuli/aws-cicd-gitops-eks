@@ -1,0 +1,13 @@
+
+flowchart TD
+    A["Developer pushes code"] --> B["GitHub Source Repository"]
+    B --> C["Jenkins CI Pipeline"]
+    C --> D["Maven Build"]
+    D --> E["SonarQube Code Analysis"]
+    E --> F["Docker Image Build"]
+    F --> G["Amazon ECR"]
+    B -. "Version-controlled deployment configuration" .-> H["GitOps Repository"]
+    H --> I["Argo CD"]
+    G -. "Image referenced by deployment configuration" .-> I
+    I --> J["Amazon EKS"]
+    J --> K["Kubernetes Application"]
