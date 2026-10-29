@@ -23,6 +23,25 @@ Manual application builds and deployments can involve repetitive steps, inconsis
 
 ## Architecture and Workflow
 
+## Architecture Diagram
+
+```mermaid
+flowchart TD
+    A["Developer pushes code"] --> B["GitHub Source Repository"]
+    B --> C["Jenkins CI Pipeline"]
+    C --> D["Maven Build"]
+    D --> E["SonarQube Code Analysis"]
+    E --> F["Docker Image Build"]
+    F --> G["Amazon ECR"]
+
+    B -. "Deployment configuration" .-> H["GitOps Repository"]
+    H --> I["Argo CD"]
+    G -. "Image referenced in configuration" .-> I
+    I --> J["Amazon EKS"]
+    J --> K["Kubernetes Application"]
+```
+
+
 1. Developers push application changes to Git.
 2. Jenkins runs the configured build pipeline.
 3. Maven builds the application, and SonarQube performs code-quality analysis.
