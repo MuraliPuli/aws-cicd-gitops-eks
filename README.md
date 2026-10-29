@@ -6,6 +6,22 @@ This project demonstrates an end-to-end CI/CD and GitOps workflow using Jenkins,
 
 The goal is to reduce manual deployment effort, improve deployment consistency, and manage Kubernetes application deployments through version-controlled configurations.
 
+## Project Status
+
+**Type:** AWS Cloud & DevOps Portfolio Project
+
+This repository demonstrates an example CI/CD and GitOps
+architecture using Jenkins, Maven, SonarQube, Docker,
+Amazon ECR, Kubernetes, Argo CD, and Amazon EKS.
+
+It includes sample application code, pipeline configuration,
+container build instructions, Kubernetes manifests, and
+GitOps documentation.
+
+**Validation:** The repository is a portfolio demonstration.
+The complete end-to-end deployment has not been verified.
+
+
 ## Real-World Problem
 
 Manual application builds and deployments can involve repetitive steps, inconsistent configurations, and human errors. Managing application updates across environments can also make it difficult to maintain the intended deployment state.
